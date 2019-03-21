@@ -1,0 +1,24 @@
+<node>
+  <interface name='com.endlessm.GameStateService'>
+    <method name='Get'>
+      <arg type='s' name='key' direction='in'/>
+      <arg type='v' name='value' direction='out'/>
+    </method>
+    <method name='Set'>
+      <arg type='s' name='key' direction='in'/>
+      <arg type='v' name='value' direction='in'/>
+    </method>
+    <method name='Reload'>
+    </method>
+    <method name='Reset'>
+    </method>
+    <signal name='changed'>
+      <arg type='s' name='key'/>
+      <arg type='v' name='value'/>
+    </signal>
+    <signal name='reload'>
+    </signal>
+    <signal name='reset'>
+    </signal>
+  </interface>
+</node>

@@ -1,0 +1,13 @@
+option(
+    'sound_server',
+    type: 'boolean',
+    value: true,
+    description: 'Enable libraries generation for HackSoundServer'
+)
+
+option(
+    'game_state_service',
+    type: 'boolean',
+    value: true,
+    description: 'Enable libraries generation for GameStateService'
+)
