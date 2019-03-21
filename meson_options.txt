@@ -1,0 +1,13 @@
+option(
+    'enable-hss',
+    type: 'boolean',
+    value: true,
+    description: 'Enable libraries generation for HackSoundServer'
+)
+
+option(
+    'enable-gss',
+    type: 'boolean',
+    value: true,
+    description: 'Enable libraries generation for GameStateService'
+)
