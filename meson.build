@@ -10,6 +10,10 @@ if get_option('enable-hss')
     subdir('hack-sound-server')
 endif
 
+if get_option('enable-hss2')
+    subdir('hack-sound-server2')
+endif
+
 if get_option('enable-gss')
     subdir('game-state-service')
 endif
