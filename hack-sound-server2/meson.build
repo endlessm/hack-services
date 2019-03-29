@@ -1,4 +1,4 @@
-namespace = 'HackSoundServer2'
+namespace = 'HackServices'
 library_name = 'hacksoundserver2'
 export_package_name = 'hack-sound-server2'
 
@@ -10,9 +10,15 @@ hacksoundserver2_dbus_sources = gnome.gdbus_codegen(
     export_package_name,
     sources: 'data/com.endlessm.HackSoundServer2.xml',
     interface_prefix : 'com.endlessm.',
+    namespace: namespace,
     autocleanup: 'all',
     install_header: true,
-    install_dir: join_paths(get_option('includedir'), meson.project_name())
+    install_dir: join_paths(get_option('includedir'), meson.project_name()),
+    annotations: [
+        ['com.endlessm.HackSoundServer2', 'org.gtk.GDBus.C.Name', 'Sound2'],
+        ['com.endlessm.HackSoundServer2.Player', 'org.gtk.GDBus.C.Name', 'Sound2Player'],
+        ['com.endlessm.HackSoundServer2.Player.Sound', 'org.gtk.GDBus.C.Name', 'Sound2PlayerSound']
+    ]
 )
 
 hacksoundserver2lib = shared_library(

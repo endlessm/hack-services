@@ -17,12 +17,12 @@
       <arg type='o' name='path' direction='out'/>
     </method>
   </interface>
-    <interface name='com.endlessm.HackSoundServer2.Sound'>
-      <method name='UpdateProperties'>
-        <arg type='u' name='transition_time_ms' direction='in'/>
-        <arg type='a{sv}' name='options' direction='in'/>
-      </method>
-      <method name='Stop'/>
-      <method name='Terminate'/>
-    </interface>
+  <interface name='com.endlessm.HackSoundServer2.Player.Sound'>
+    <method name='UpdateProperties'>
+      <arg type='u' name='transition_time_ms' direction='in'/>
+      <arg type='a{sv}' name='options' direction='in'/>
+    </method>
+    <method name='Stop'/>
+    <method name='Terminate'/>
+  </interface>
 </node>
