@@ -6,6 +6,13 @@ option(
 )
 
 option(
+    'sound_server2',
+    type: 'boolean',
+    value: true,
+    description: 'Enable libraries generation for HackSoundServer2'
+)
+
+option(
     'game_state_service',
     type: 'boolean',
     value: true,
