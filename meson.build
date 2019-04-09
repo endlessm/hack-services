@@ -11,6 +11,10 @@ if get_option('sound_server')
     subdir('hack-sound-server')
 endif
 
+if get_option('sound_server2')
+    subdir('hack-sound-server2')
+endif
+
 if get_option('game_state_service')
     subdir('game-state-service')
 endif
