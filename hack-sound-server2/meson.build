@@ -9,6 +9,7 @@ hacksoundserver2_dbus_sources = gnome.gdbus_codegen(
     hacksoundserver2_export_package_name,
     sources: 'data/com.endlessm.HackSoundServer2.xml',
     interface_prefix : 'com.endlessm.',
+    object_manager: true,
     autocleanup: 'all',
     install_header: true,
     install_dir: join_paths(get_option('includedir'), meson.project_name())
@@ -31,7 +32,7 @@ pkg.generate(
     requires: ['gio-2.0', 'gio-unix-2.0']
 )
 
-gnome.generate_gir(
+hacksoundserver2_dbus_sources += gnome.generate_gir(
     hacksoundserver2lib,
     sources : hacksoundserver2_dbus_sources,
     namespace : hacksoundserver2_namespace,
@@ -43,3 +44,14 @@ gnome.generate_gir(
         gio_unix
     ]
 )
+
+hacksoundserver2_dep = declare_dependency(link_with : hacksoundserver2lib,
+	sources: [hacksoundserver2_dbus_sources],
+	dependencies : [
+        gio_dep,
+        gio_unix
+    ],
+    include_directories: include_directories('.')
+)
+
+subdir('client')
